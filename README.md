@@ -41,14 +41,14 @@ $ cd ~/repos/devops/docs/secrets  # location of secrets store clone
 $ alias vault="ansible-vault --vault-password-file=$PWD/open-vault"
 
 # Decrypt deploy key
-$ vault view lecture-capture-deploy-main > ~/.ssh/lecture-capture-deploy-main
-$ chmod 0600 ~/.ssh/lecture-capture-deploy-main
+$ vault view lecture-capture-agent-deploy-main > ~/.ssh/lecture-capture-agent-deploy-main
+$ chmod 0600 ~/.ssh/lecture-capture-agent-deploy-main
 
 # Copy passphrase to clipboard
-$ vault view lecture-capture-deploy.passphrase | xclip -i -sel clip
+$ vault view lecture-capture-agent-deploy.passphrase | xclip -i -sel clip
 
 # Add key to ssh-agent
-$ ssh-add ~/.ssh/lecture-capture-deploy-main
+$ ssh-add ~/.ssh/lecture-capture-agent-deploy-main
 ```
 
 ### Updating hosts file ###
